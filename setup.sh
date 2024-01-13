@@ -18,3 +18,6 @@ sudo docker run -d -p 9092:9092 --net host kafka
 # Build and run MYSQL instance
 sudo docker pull mysql
 sudo docker run --name MYSQL -e MYSQL_ROOT_PASSWORD=123 -d -p 3306:3306 --net host mysql
+
+# Create the database
+sudo docker exec -it MYSQL mysql -u root -p123 -e "CREATE DATABASE IF NOT EXISTS IBD;"
