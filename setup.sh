@@ -14,3 +14,7 @@ fi
 cd ../kafka
 sudo docker build . -t kafka
 sudo docker run -d -p 9092:9092 --net host kafka
+
+# Build and run MYSQL instance
+sudo docker pull mysql
+sudo docker run --name MYSQL -e MYSQL_ROOT_PASSWORD=123 -d -p 3306:3306 --net host mysql
