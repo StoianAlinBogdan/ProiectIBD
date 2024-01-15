@@ -23,7 +23,7 @@ sudo docker run --name MYSQL -e MYSQL_ROOT_PASSWORD=123 -d -p 3306:3306 --net ho
 sleep 5
 
 # Create the database
-sudo docker exec -it MYSQL mysql -u root -p123 -e "CREATE DATABASE IF NOT EXISTS IBD;"
+sudo docker exec -it MYSQL mysql -uroot -p123 -e "CREATE DATABASE IF NOT EXISTS IBD;"
 
 # Build another MySQL instance for replica
 sudo docker run -d --name MYSQL_REPLICA -e MYSQL_ROOT_PASSWORD=123 -p 3307:3306 mysql
